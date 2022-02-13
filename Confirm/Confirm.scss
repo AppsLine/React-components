@@ -1,0 +1,23 @@
+.react-confirm-alert {
+  .react-confirm-alert-body {
+    position: relative;
+    min-height: 150px;
+    padding: 0;
+
+    h1 {
+      font-size: 17px;
+      font-weight: 700;
+      background-color: rgb(250, 250, 250);
+      padding: 10px;
+    }
+
+    .react-confirm-alert-button-group {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      padding: 10px;
+      background-color: rgb(250, 250, 250);
+      justify-content: flex-end;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@import "assets/styles/utils.scss";
+
+@include keyframes(bounce) {
+  from,
+  to {
+		transform: translateY(0) scale(1,1);
+		animation-timing-function: ease-in;
+  }
+  45% {
+		transform: translateY(5em) scale(1,1);
+		animation-timing-function: linear;
+  }
+	50% {
+		transform: translateY(5em) scale(1.5,0.5);
+		animation-timing-function: linear;
+  }
+	55% {
+		transform: translateY(5em) scale(1,1);
+		animation-timing-function: ease-out;
+  }
+}
+@mixin bounce {
+  @include animate(bounce, 1s, infinite, normal);
+}
+
+.Preloader {
+  z-index: 1031;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(242, 248, 249, .5);
+
+  .content {
+    position: fixed;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    font: 1em/1.5 sans-serif;
+    width: 300px;
+    
+    .a {
+      background: hsl(3, 81%, 55%);
+    }
+
+    .b {
+      background: rgb(240, 157, 55);
+    }
+
+    .c {
+      background: rgb(68, 117, 242);
+    }
+
+    .a,
+    .b,
+    .c {
+      display: flex;
+      margin: .5em;
+      width: 3em;
+      height: 3em;
+      border-radius: 50%;
+      transform-origin: 50% 100%;
+      font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+      @include bounce;
+    }	
+  }
+}

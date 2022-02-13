@@ -1,0 +1,30 @@
+@import "assets/styles/utils.scss";
+
+@include keyframes(linearGradient) {
+  0% {
+		background-position: 0% 50%;
+  }
+	50% {
+		background-position: 100% 50%;
+  }
+	100% {
+		background-position: 0% 50%;
+  }
+}
+@mixin linearGradient {
+  @include animate(linearGradient, 5s, infinite, ease);
+}
+
+.ProgressBar {
+  position: absolute;
+  border-radius: 0px !important;
+  width: 100%;
+  height: .5rem !important;
+
+  .progress-bar {
+    background: linear-gradient(270deg, #00b5de, #fc00ff);
+    background-size: 400% 400%;
+
+    @include linearGradient;
+  }
+}

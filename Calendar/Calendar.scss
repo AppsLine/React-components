@@ -1,0 +1,51 @@
+.Calendar {
+  position: relative;
+  height: 55px;
+
+  .placeholder {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 5px;
+    background-color: white;
+    opacity: 1.0;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 0px;
+    line-height: 8px;
+    transition: all;
+    -webkit-transition: all;
+    -moz-transition: all;
+    -ms-transition: all;
+    -o-transition: all;
+    transition-timing-function: ease;
+    transition-duration: 0.2s;
+    
+    span {
+      color: #6c757d;
+      font-size: 12px;
+    }
+  }
+
+  .p-calendar {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+
+    .p-inputtext {
+      border-left: 0px;
+      border-top: 0px;
+      border-right: 0px;
+    }
+  }
+}
+
+.p-datepicker.p-component {
+  z-index: 1030 !important;
+}
+
+.p-datepicker {
+  &.p-component {
+    z-index: 1055 !important;
+  }
+}

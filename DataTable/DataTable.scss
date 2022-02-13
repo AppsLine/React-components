@@ -1,0 +1,25 @@
+.DataTable {
+  .p-datatable-thead {
+    tr {
+      th {
+        padding: .5rem 1rem !important;
+      }
+    }
+  }
+
+  .p-datatable-tbody {
+    tr {
+      td {
+        padding: .5rem 1rem !important;
+      }
+    }
+  }
+
+  .p-datatable-tfoot {
+    display: none;
+  }
+
+  .p-datatable-footer {
+    padding: .5rem 1rem !important;
+  }
+}

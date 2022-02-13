@@ -1,0 +1,99 @@
+$focus-color: #555;
+$valid-color: #555;
+$invalid-color: red;
+
+@mixin bar-active {
+  width: 100%;
+}
+
+.Input {
+  width: 100%;
+  display: block;
+  position: relative;
+
+  &.icon {
+    input {
+      padding-left: 45px;
+    }
+  }
+
+  &.h-none {
+    input {
+      height: initial;
+    }
+  }
+
+  input {
+    background-color: transparent;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px;
+    border-style: solid;
+    border-color: #e2e2e2;
+    box-shadow: none;
+    margin-bottom: 0px !important;
+    width: 100%;
+    height: 55px;
+
+    &:focus ~ .bar,
+    &:valid:not(:placeholder-shown) ~ .bar,
+    &.valid ~ .bar,
+    &:invalid ~ .bar,
+    &.invalid ~ .bar {
+      @include bar-active;
+    }
+
+    &:focus {
+      outline: none;
+
+      & + i {
+        color: $focus-color;
+      }
+
+      & ~ .bar {
+        background: linear-gradient(45deg, #00dbde, #fc00ff);
+      }
+    }
+
+    &:valid:not(:placeholder-shown),
+    &.valid {
+      & ~ i {
+        color: $valid-color;
+      }
+
+      & ~ .bar {
+        background: linear-gradient(45deg, #00dbde, #fc00ff);
+      }
+    }
+
+    &:invalid,
+    &.invalid {
+      & + i {
+        color: $invalid-color;
+      }
+
+      & ~ .bar {
+        background: linear-gradient(to top, $invalid-color, $invalid-color);
+      }
+    }
+  }
+
+  i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    margin-top: -12px;
+    font-size: 24px;
+  }
+
+  .bar {
+    width: 0%;
+    height: 2px;;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    left: 0;
+    transition: all .7s;
+  }
+}

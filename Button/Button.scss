@@ -1,0 +1,116 @@
+@import "assets/styles/utils.scss";
+
+.Button {
+  &.primary {
+    display: block !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: white;
+    border-color: #333 !important;
+    position: relative;
+    background-color: #333;
+    background-image: linear-gradient(to top, #333, #333);
+    z-index: 1;
+
+    & span {
+      font-weight: 700;
+      position: relative;
+      z-index: 3;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0.3em;
+      background-image: linear-gradient(45deg, #00dbde, #fc00ff) !important;
+      transition: opacity 0.5s ease-out;
+      z-index: 2;
+      opacity: 0;
+    }
+
+    &:hover:not([disabled]):after,
+    &:Active:not([disabled]):after,
+    &:focus:not([disabled]):after {
+      opacity: 1;
+    }
+  }
+
+  &.secondary {
+    display: block !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: #333;
+    border-color: #333 !important;
+    position: relative;
+    background-color: white;
+    background-image: linear-gradient(to top, white, white);
+    z-index: 1;
+
+    & span {
+      font-weight: 700;
+      position: relative;
+      z-index: 3;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0.3em;
+      background-image: linear-gradient(45deg, #00dbde, #fc00ff) !important;
+      transition: opacity 0.5s ease-out;
+      z-index: 2;
+      opacity: 0;
+    }
+
+    &:hover:not([disabled]):after,
+    &:Active:not([disabled]):after,
+    &:focus:not([disabled]):after {
+      opacity: 1;
+    }
+
+    &:hover:not([disabled]),
+    &:Active:not([disabled]),
+    &:focus:not([disabled]) {
+      color: white;
+    }
+  }
+
+  &.link {
+    background: none;
+    color: inherit;
+    border: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+
+  &.color-danger {
+    color: red;
+  }
+
+  &.color-primary {
+    color: $color-primary;
+  }
+
+  &.background-danger {
+    background-color: red;
+  }
+}

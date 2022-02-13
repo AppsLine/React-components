@@ -1,0 +1,33 @@
+.Shadow {
+  position: relative;
+
+  .content {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 99;
+      
+    &.default {
+      box-shadow: 0 0 1px 0;
+      background: inherit;
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      
+      /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
+      @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+          background-color: rgba(255, 255, 255, .8);
+      }
+    }
+    
+    &.dark {
+      background-color: #333;
+      opacity: .3;
+    }
+
+    &.cursor-cancel {
+      cursor: not-allowed;
+    }
+  }
+}
